@@ -1,0 +1,11 @@
+# oxidized
+Oxidized in docker
+
+Copy file config/oxidized/config_example to config/oxidized/config
+Copy file config/oxidized/router.db_example to config/oxidized/router.db
+Update information in router.db file.
+
+For start oxidized container execute:
+docker run -d -v $(pwd)/config/oxidized:/home/oxidized/.config/oxidized -p 8080:8888/tcp oxidized/oxidized:0.29.1-30-g52c1f98
+
+Check config status http://localhost:8080

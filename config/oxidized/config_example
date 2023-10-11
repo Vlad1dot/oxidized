@@ -1,0 +1,61 @@
+---
+username: username
+password: password
+model: junos
+resolve_dns: false
+interval: 3600
+use_syslog: false
+debug: false
+threads: 30
+use_max_threads: false
+timeout: 20
+retries: 3
+prompt: !ruby/regexp /^([\w.@-]+[#>]\s?)$/
+rest: 0.0.0.0:8888
+next_adds_job: false
+vars: {}
+groups: {}
+group_map: {}
+models: {}
+pid: "/home/oxidized/.config/oxidized/pid"
+crash:
+  directory: "/home/oxidized/.config/oxidized/crashes"
+  hostnames: false
+stats:
+  history_size: 10
+input:
+  default: ssh, telnet
+  debug: false
+  ssh:
+    secure: false
+  ftp:
+    passive: true
+  utf8_encoded: true
+output:
+#------------------- save config to file
+#  default: file
+#  file:
+#    directory: "/home/oxidized/.config/oxidized/configs"
+
+#------------------- save config to git repository
+  default: git
+  git:
+    user: GIT_USER
+    email: GIT_USER@EMAIL.COM
+    repo: "/home/oxidized/.config/oxidized/devices.git"
+source:
+  default: csv
+  csv:
+    file: "/home/oxidized/.config/oxidized/router.db"
+    delimiter: !ruby/regexp /:/
+    map:
+      name: 0
+      model: 1
+      ip: 2
+      username: 3
+      password: 4
+    vars_map:
+      enable: 5
+model_map:
+  juniper: junos
+  cisco: ios

@@ -1,0 +1,7 @@
+config/oxidized/config
+config/oxidized/configs/*
+config/oxidized/crash
+config/oxidized/devices.git/
+config/oxidized/pid
+config/oxidized/logs/
+config/oxidized/router.db
