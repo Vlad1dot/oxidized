@@ -5,3 +5,4 @@ config/oxidized/devices.git/
 config/oxidized/pid
 config/oxidized/logs/
 config/oxidized/router.db
+config/nginx/.htpasswd
